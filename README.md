@@ -2,8 +2,12 @@ Git Notes
 =========
 
 - [`git add`](https://github.com/Crossroadsman/git-notes/blob/master/add.md)
+- [`git checkout`](https://github.com/Crossroadsman/git-notes/blob/master/checkout)
 - [`git diff`](https://github.com/Crossroadsman/git-notes/blob/master/diff.md)
 - [`git log`](https://github.com/Crossroadsman/git-notes/blob/master/log.md)
+- [`git reset`](https://github.com/Crossroadsman/git-notes/blob/master/reset.md)
+- [`git revert`](https://github.com/Crossroadsman/git-notes/blob/master/revert.md)
+
 
 [The Three Trees][link01]
 -----------------
