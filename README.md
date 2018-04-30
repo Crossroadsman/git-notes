@@ -15,5 +15,15 @@ The trees:
 - the commit history
 
 
+[The Four Objects][link02]
+------------------
+- BLOB ('binary large object')
+- tree
+- commit
+- annotated tag
+
+
+
 
 [link01]: https://www.atlassian.com/git/tutorials/undoing-changes/git-reset
+[link02]: https://youtu.be/lG90LZotrpo?t=9m50s
