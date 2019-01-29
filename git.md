@@ -669,7 +669,6 @@ $ git push --all -u
 (Where `--all` means 'all refs under refs/heads should be pushed', `-u` means 'for every branch that is up-to-date or 
 successfully pushed, add upstream (tracking) ref')
 
-
 ### <a name="s2.10">Diff</a> ###
 
 Here are some common ways of performing a diff:
@@ -816,6 +815,79 @@ Try:
     the working directory and staging area.
 11. commit the changes
 12. push the commit
+
+#### Checking Out from a Tag ####
+When you clone a project, it won't, by default, include the tags.
+
+Therefore, the first step is to make sure your local has all the tags that are
+on the remote(s) (Note `--all` will fetch all remotes, not just origin (in the 
+below example `origin` is the only known remote)).
+```console
+$ git fetch --all --tags
+Fetching origin
+```
+
+Optionally, we can see the tags (use `-l <pattern>` if you're looking for a 
+particular tag):
+```console
+$ git tag
+1.0
+1.0.1
+1.0.2
+1.0.3
+1.0.4
+1.1
+1.1.1
+1.1.2
+1.1.3
+1.1.4
+1.10
+1.10.1
+1.10.2
+1.10.3
+1.10.4
+1.10.5
+1.10.6
+1.10.7
+1.10.8
+1.10a1
+1.10b1
+1.10rc1
+1.11
+1.11.1
+...
+```
+
+```console
+$ git tag -l 1.8.1
+1.8.1
+```
+
+Now we can check out the commit referenced by the tag:
+```console
+$ git checkout tags/1.8.1
+Checking out files: 100% (5296/5296), done.
+Note: checking out 'tags/1.8.1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 3d128dcadd [1.8.x] Bumped version for 1.8.1 release.
+```
+
+If you know you want to work on the files at the time of the tagged commit, 
+rather than just browse them, you can checkout the tag as a new branch:
+```console
+$ git checkout tags/1.8.1 -b work-on-v181-files
+Checking out files: 100% (5296/5296), done.
+Switched to a new branch 'work-on-v181-files'
+```
 
 
 <a name="s3">Understanding Git</a>
