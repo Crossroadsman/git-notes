@@ -471,6 +471,22 @@ $ git merge --no-ff my-feature-branch
 ```
 **TODO: Add example output**
 
+#### Merging a single file ####
+
+When you just want a few files from another branch merged into the current branch do the following:
+```console
+$ git checkout destination-branch
+Switched to branch 'destination-branch'
+Your branch is up to date with 'origin/destination-branch'.
+$ git checkout source-branch path/to/file1.txt path/to/file2.txt
+$ git stash
+```
+**TODO: Add example output**
+```console
+$ git merge stash
+```
+**TODO: Add example output**
+
 
 ### <a name="s2.7">Conflict Resolution</a> ###
 
