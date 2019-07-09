@@ -18,6 +18,7 @@ Index
    10. [Diff](#s2.10)
    11. [Tagging](#s2.11)
    12. [Remove Large Files](#s2.12)
+   13. [Change remote url](#2.13)
 3. [Understanding Git](#s3)
    1. [Trees](#s3.1)
    2. [Commits](#s3.2)
@@ -904,6 +905,13 @@ Try:
     the working directory and staging area.
 11. commit the changes
 12. push the commit
+
+### <a name="s2.13">Change Remote URL</a> ###
+Situation: you've got a repo where the original `git remote add origin <url>` pointed to an https url but now you want
+to point to a ssh url. You can change the url for a named remote as follows:
+```console
+$ git remote set-url origin <new-url>
+```
 
 
 <a name="s3">Understanding Git</a>
