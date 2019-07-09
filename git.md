@@ -18,7 +18,7 @@ Index
    10. [Diff](#s2.10)
    11. [Tagging](#s2.11)
    12. [Remove Large Files](#s2.12)
-   13. [Change remote url](#2.13)
+   13. [Change remote url](#s2.13)
 3. [Understanding Git](#s3)
    1. [Trees](#s3.1)
    2. [Commits](#s3.2)
