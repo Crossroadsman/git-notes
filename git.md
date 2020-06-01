@@ -19,6 +19,7 @@ Index
    11. [Tagging](#s2.11)
    12. [Remove Large Files](#s2.12)
    13. [Change remote url](#s2.13)
+   14. [Shallow Clones](#s2.14)
 3. [Understanding Git](#s3)
    1. [Trees](#s3.1)
    2. [Commits](#s3.2)
@@ -912,6 +913,34 @@ to point to a ssh url. You can change the url for a named remote as follows:
 ```console
 $ git remote set-url origin <new-url>
 ```
+
+### <a name="s2.14">Shallow Clones</a> ###
+A regular clone downloads the entire commit history (and thus all the binary
+blobs from that history) for any branches being cloned. The advantage of having
+a full commit history in the clone is twofold:
+
+- you can roll back to a prior commit without needing to pull any new data
+  from the server;
+- you have more efficient pushes (since the local repo doesn't need to check
+  with the server to create a diff).
+
+When neither of these advantages apply, it is more convenient for the server
+(less data transferred) and the client (less data transferred, less storage
+used) to perform a *shallow* clone: only retrieving the last 1 or *n* commits.
+Thus it is common to see applications that are distributed using git specifying
+a shallow clone in their installation instructions. The shallow clone is not
+necessary for the install but saves time, space, and bandwidth for a clone
+where the user is not expected to ever push back to the server any changes.
+
+Syntax:
+`--depth <depth>`
+Create a *shallow clone* with a history truncated to the specified number of
+commits. Implies `--single-branch` unless `--no-single-branch` is given to
+fetch the histories near the tips of all branches. If you want to clone
+submodules shallowly, also pass `--shallow-submodules`.
+
+Example:
+`git clone --depth 1 https://some.repo.url`
 
 
 <a name="s3">Understanding Git</a>
