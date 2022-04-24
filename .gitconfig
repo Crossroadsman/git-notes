@@ -1,0 +1,26 @@
+[user]
+  # Note: github uses the email to associate the git user with the
+  # github user. This can be any email address that is linked to
+  # the github user.
+	name = MyUsername
+	email = myemail@domain.com
+[push]
+    default = simple
+
+    # followTags: push all the refs that would be pushed without this
+    # option, and also push annotated tags in regs/tags that are:
+    # - missing from the remote; AND
+    # - pointing at a commit-ish that is reachable from the refs being
+    #   pushed
+    followTags = true
+[alias]
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[color]
+    branch = auto  # default is false?
+    diff = auto  # default is false?
+    status = auto # default is false?
+    ui = auto # default is auto
+[diff "zip"]
+    textconv = unzip -c -a
+[commit]
+	template = /home/<unix_account>/.gitmessage
